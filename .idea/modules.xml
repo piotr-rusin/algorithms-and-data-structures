@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/algorithms-and-data-structures.iml" filepath="$PROJECT_DIR$/.idea/modules/algorithms-and-data-structures.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/algorithms-and-data-structures_main.iml" filepath="$PROJECT_DIR$/.idea/modules/algorithms-and-data-structures_main.iml" group="algorithms-and-data-structures" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/algorithms-and-data-structures_test.iml" filepath="$PROJECT_DIR$/.idea/modules/algorithms-and-data-structures_test.iml" group="algorithms-and-data-structures" />
+    </modules>
+  </component>
+</project>
