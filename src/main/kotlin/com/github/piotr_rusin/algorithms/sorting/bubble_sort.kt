@@ -28,3 +28,21 @@ fun <T: Comparable<T>> sortWithOptimizedBubbleSort(values: Array<T>) {
         elementsToCheck--
     }
 }
+
+/**
+ * After every pass, all elements that occur after the last swap are already sorted,
+ * so they don't need to be checked again in subsequent passes.
+ */
+fun <T: Comparable<T>> sortWithEvenMoreOptimizedBubbleSort(values: Array<T>) {
+    var elementsToCheck = values.size
+    while (elementsToCheck > 0) {
+        var lastSwapIndex = 0
+        for (i in 1..(elementsToCheck - 1)) {
+            if (values[i-1] > values[i]) {
+                swap(values, i - 1, i)
+                lastSwapIndex = i
+            }
+        }
+        elementsToCheck = lastSwapIndex
+    }
+}
