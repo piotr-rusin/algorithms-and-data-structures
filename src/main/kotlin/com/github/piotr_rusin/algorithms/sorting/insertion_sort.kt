@@ -32,3 +32,23 @@ fun <T: Comparable<T>> sortByInsertionWithPushingPredecessor(values: Array<T>){
         values[predecessorIndex + 1] = element
     }
 }
+
+/**
+ * Version with pushing elements and looking for the last predecessor, with recursion.
+ */
+fun <T: Comparable<T>> recursivelySortByInsertionWithPushingPredecessor(values: Array<T>, n: Int = values.size - 1) {
+    if (n <= 0) return
+    recursivelySortByInsertionWithPushingPredecessor(values, n - 1)
+
+    val element = values[n]
+    var predecessorIndex = n - 1
+    while (predecessorIndex >= 0 && values[predecessorIndex] > element) {
+        values[predecessorIndex + 1] = values[predecessorIndex]
+        predecessorIndex--
+    }
+    values[predecessorIndex + 1] = element
+}
+
+fun <T: Comparable<T>> recursivelySortByInsertionWithPushingPredecessor(values: Array<T>) {
+    recursivelySortByInsertionWithPushingPredecessor(values, values.size - 1)
+}
