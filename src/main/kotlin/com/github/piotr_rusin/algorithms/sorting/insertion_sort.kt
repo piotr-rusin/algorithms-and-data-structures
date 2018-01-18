@@ -15,3 +15,20 @@ fun <T: Comparable<T>> sortByInsertionWithSwap(values: Array<T>){
         }
     }
 }
+
+/**
+ * A different, faster version: it doesn't swap the sorted element with its preceding element.
+ * Instead, it pushes each potential predecessor that is larger than sorted element, until
+ * it reaches a real predecessor for the element and puts the element behind it.
+ */
+fun <T: Comparable<T>> sortByInsertionWithPushingPredecessor(values: Array<T>){
+    for (nextUnsortedIndex in 1..(values.size - 1)) {
+        val element = values[nextUnsortedIndex]
+        var predecessorIndex = nextUnsortedIndex - 1
+        while (predecessorIndex >= 0 && values[predecessorIndex] > element) {
+            values[predecessorIndex + 1] = values[predecessorIndex]
+            predecessorIndex--
+        }
+        values[predecessorIndex + 1] = element
+    }
+}
